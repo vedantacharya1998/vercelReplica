@@ -1,0 +1,34 @@
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+
+
+
+/* ...Existing styles... */
+
+/* New CSS to adjust chat box positioning and width */
+.chat-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70%; /* Adjust this value to control the width of the chat box */
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.input-container {
+  position: fixed;
+  bottom: 0;
+  left: 70%; /* The chat container occupies 70% of the screen width */
+  width: 30%; /* The input container occupies 30% of the screen width */
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
