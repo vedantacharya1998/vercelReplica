@@ -23,6 +23,10 @@ document.getElementById("sendBtn").addEventListener("click", function () {
     return;
   }
 
+  const loadingSpinner = document.getElementById("loadingSpinner");
+  loadingSpinner.classList.remove("visually-hidden");
+  document.getElementById("sendBtn").disabled = true;
+
   const requestData = {
     prompt: userInput,
   };
@@ -63,11 +67,16 @@ document.getElementById("sendBtn").addEventListener("click", function () {
 
       const chatBox = document.getElementById("chatBox");
       chatBox.appendChild(aiMessage);
+
+      loadingSpinner.classList.add("visually-hidden");
+      document.getElementById("sendBtn").disabled = false;
     })
     .catch((error) => {
       console.error(`Error fetching response from ${selectedModel}:`, error);
+
+      loadingSpinner.classList.add("visually-hidden");
+      document.getElementById("sendBtn").disabled = false;
     });
 
   document.getElementById("userInput").value = "";
 });
-
